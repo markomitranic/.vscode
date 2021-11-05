@@ -9,8 +9,6 @@
 	- give it workspace tag
 	- set up floating IP
 	- add IP to your hosts file
-	- create a network firewall attach to tag
-	- add a disk to droplet named workspace
 
 ## Provisioning
 - update & upgrade
@@ -36,17 +34,19 @@
 - `docker system prune --all`
 - `docker volume rm $(docker volume ls)`
 - delete vendors
-```bash
-find . -type d -name node_modules -prune -exec rm -rf {} \;
-find . -type d -name .venv -prune -exec rm -rf {} \;
-find . -type d -name .tmp -prune -exec rm -rf {} \;
-find . -type d -name .vscode-server -prune -exec rm -rf {} \;
-```
+	```bash
+	find . -type d -name node_modules -prune -exec rm -rf {} \;
+	find . -type d -name .venv -prune -exec rm -rf {} \;
+	find . -type d -name .tmp -prune -exec rm -rf {} \;
+	find . -type d -name .vscode-server -prune -exec rm -rf {} \;
+	```
 - `ncdu /`
 
-
-
-
-
-
-
+# Moving to a new machine
+- add a disk to droplet named workspace
+  - cp -R /root/workspace /mnt/workspace/
+  - power down the machine
+  - detach the volume and the floating IP
+- create and provision a new droplet as seen above
+  - cp -R /mnt/workspace/workspace /root/
+- detach and destroy the volume

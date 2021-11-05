@@ -1,0 +1,57 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.activeBackground": "#1f6fd0",
+			"activityBar.activeBorder": "#ee90bb",
+			"activityBar.background": "#1f6fd0",
+			"activityBar.foreground": "#e7e7e7",
+			"activityBar.inactiveForeground": "#e7e7e799",
+			"activityBarBadge.background": "#ee90bb",
+			"activityBarBadge.foreground": "#15202b",
+			"statusBar.background": "#1857a4",
+			"statusBar.foreground": "#e7e7e7",
+			"statusBarItem.hoverBackground": "#1f6fd0",
+			"statusBarItem.remoteBackground": "#c92121",
+			"statusBarItem.remoteForeground": "#d3d3d3",
+			"titleBar.activeBackground": "#1857a4",
+			"titleBar.activeForeground": "#e7e7e7",
+			"titleBar.inactiveBackground": "#1857a499",
+			"titleBar.inactiveForeground": "#e7e7e799",
+		},
+	},
+	"extensions": {
+		// List of extensions which should be recommended for users of this workspace.
+		"recommendations": [
+			"hashicorp.terraform",
+			"k--kato.intellij-idea-keybindings",
+			"redhat.vscode-yaml",
+			"mikestead.dotenv",
+			"ms-vscode-remote.remote-containers",
+			"ckolkman.vscode-postgres",
+			"mohsen1.prettify-json",
+			"ms-azuretools.vscode-docker",
+			"eamodio.gitlens",
+			"ms-kubernetes-tools.vscode-kubernetes-tools",
+			"yzhang.markdown-all-in-one",
+			"philnash.ngrok-for-vscode",
+			"mutantdino.resourcemonitor",
+			"secanis.jenkinsfile-support",
+			"marlon407.code-groovy"
+		],
+		// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+		"unwantedRecommendations": [
+			"vscjava.vscode-java-pack",
+			"ms-vscode.cpptools-extension-pack",
+			"dotjoshjohnson.xml",
+			"austin.code-gnu-global",
+			"eg2.vscode-npm-script",
+			"christian-kohler.npm-intellisense",
+			"ms-azuretools.vscode-azureterraform",
+		]
+	}
+}

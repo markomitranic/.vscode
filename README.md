@@ -9,6 +9,21 @@
 	- give it workspace tag
 	- set up floating IP
 	- add IP to your hosts file
+- Firewall (optional, recommended):
+    - spawn a VPN droplet
+        - Marketplace Image: `OpenVPN + Pihole`
+        - in the same VPC
+    	- name `openvpn-pihole`, tag `vpn`
+    	- Follow the getting started directions
+    	- Add your new floating IP to the VPN conf (last line of config) to route only that IP.
+			```none
+			route-nopull
+			route 178.122.131.139 255.255.255.255
+			```
+    - create a Network Firewall
+        - name workspace
+        - IN: allow [`ICMP`, `TCP`, `UDP`] from `vpn` tag.
+        - OUT: allow [`ICMP`, `TCP`, `UDP`] from [`All IPv4`, `All IPv6`].
 
 ## Provisioning
 - update & upgrade

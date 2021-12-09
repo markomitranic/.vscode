@@ -41,7 +41,8 @@
 			"philnash.ngrok-for-vscode",
 			"mutantdino.resourcemonitor",
 			"secanis.jenkinsfile-support",
-			"marlon407.code-groovy"
+			"marlon407.code-groovy",
+			"takumii.markdowntable"
 		],
 		// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 		"unwantedRecommendations": [

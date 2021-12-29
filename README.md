@@ -1,10 +1,52 @@
 # .vscode Dotfile for CND
 
-**TODO: this whole file**
+A sample dotfile that serves as an umbrella VSCode project when working on a remote host.
 
-# Brand new install
+If you connect via SSH, VSC will ask you to open a project or a file, and you would open this one. It will set up recommended extensions and default settings values. It does not contain any language servers or coding support.
 
-## Infrastructure
+- [.vscode Dotfile for CND](#vscode-dotfile-for-cnd)
+- [Using the workbox, day-to-day](#using-the-workbox-day-to-day)
+- [First time Connecting VSCode](#first-time-connecting-vscode)
+- [Using VirtualBox as a VM](#using-virtualbox-as-a-vm)
+- [Using DigitalOcean as a VM](#using-digitalocean-as-a-vm)
+	- [Provisioning Infrastructure](#provisioning-infrastructure)
+	- [Moving to a new machine](#moving-to-a-new-machine)
+# Using the workbox, day-to-day
+Open VSCode and connect in one of the three ways:
+
+1. If it was your last open window, it will automatically reconnect.
+2. From the menu File > Open Recent.
+3. `Cmd + Shift + P` and type "Remote-SSH: Connect to Remote Host"
+
+For more usage examples and videos, read [my article](https://medium.com/homullus/remote-development-or-how-i-learned-to-stop-worrying-and-love-the-mainframe-90165147a57d#fde9)
+
+# First time Connecting VSCode
+1. Clone the VSCode project settings repository. 
+   ```bash
+   ssh workbox
+   git clone git@github.com:markomitranic/.vscode.git /home/vagrant/projects/.vscode
+   ```
+2. Start VSCode on the host machine.
+3. Install dependencies:
+   1. `Cmd+Shift+P` and type "install remote development"
+   2. Install plugins `Remote - Containers` and `Remote - SSH`.
+4. Connect to the VM:
+   1. `Cmd+Shift+P` and type "Remote-SSH: Connect to Remote Host"
+   2. Pick `workbox` from the list.
+5. Open workspace:
+   1. `Cmd+Shift+P` and type "open workspace from file"
+   2. Locate the file `/home/vagrant/projects/.vscode/workspace.code-workspace`
+6. Install recomended extensions
+   1. `Cmd+Shift+P` and type "Extensions: Show Recommended Extensions"
+   2. Click on the little cloud symbol.
+
+# Using VirtualBox as a VM
+
+Follow the directions in the VBox repository.
+
+# Using DigitalOcean as a VM
+
+## Provisioning Infrastructure
 - create a droplet workspace
 	- give it workspace tag
 	- set up floating IP
@@ -24,40 +66,7 @@
         - name workspace
         - IN: allow [`ICMP`, `TCP`, `UDP`] from `vpn` tag.
         - OUT: allow [`ICMP`, `TCP`, `UDP`] from [`All IPv4`, `All IPv6`].
-
-## Provisioning
-- update & upgrade
-	- [Install Docker CE](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
-	- [Install docker-compose](https://docs.docker.com/compose/install/#install-compose-on-linux-systems)
-	- [Install Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-kubectl-binary-with-curl-on-linux)
-	- [Install k9s](https://github.com/derailed/k9s)
-	- [Install aws](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-	- [Install aws-iam-authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
-	- Install `apt-get install -y ncdu unzip`
-    - [set file watchers](https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc) because vscode needs em
-	- clone git repo to /mnt/workspace/.vscode
-
-## Connecting VSCode
-- start local vscode
-	- "install remote development"
-	- "Remote-SSH: Connect to Remote Host"
-	- "open workspace from file" /mnt/workspace/.vscode/workspace.code-workspace
-	- "Extensions: Show Recommended Extensions" click on the little cloud symbol
-	- thas it
-
-# Cleaning up from time to time
-- `docker system prune --all`
-- `docker volume rm $(docker volume ls)`
-- delete vendors
-	```bash
-	find . -type d -name node_modules -prune -exec rm -rf {} \;
-	find . -type d -name .venv -prune -exec rm -rf {} \;
-	find . -type d -name .tmp -prune -exec rm -rf {} \;
-	find . -type d -name .vscode-server -prune -exec rm -rf {} \;
-	```
-- `ncdu /`
-
-# Moving to a new machine
+## Moving to a new machine
 - add a disk to droplet named workspace
   - cp -R /root/workspace /mnt/workspace/
   - power down the machine

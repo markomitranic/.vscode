@@ -1,14 +1,4 @@
 {
-	"files.watcherExclude": {
-		"**/node_modules/**": true,
-		"**/dist/**": true,
-		"**/.tmp/**": true
-	},
-	"search.exclude": {
-		"**/node_modules/**": true,
-		"**/dist/**": true,
-		"**/.tmp/**": true
-	},
 	"workbench.colorCustomizations": {
 		"activityBar.activeBackground": "#1f6fd0",
 		"activityBar.activeBorder": "#ee90bb",

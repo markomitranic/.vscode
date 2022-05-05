@@ -6,28 +6,19 @@
         "redhat.vscode-yaml",
         "mikestead.dotenv",
         "ms-vscode-remote.remote-containers",
-        "ckolkman.vscode-postgres",
         "mohsen1.prettify-json",
         "ms-azuretools.vscode-docker",
         "eamodio.gitlens",
-        "ms-kubernetes-tools.vscode-kubernetes-tools",
         "yzhang.markdown-all-in-one",
-        "philnash.ngrok-for-vscode",
         "mutantdino.resourcemonitor",
-        "secanis.jenkinsfile-support",
-        "marlon407.code-groovy",
-        "takumii.markdowntable"
     ],
     // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
     "unwantedRecommendations": [
         "vscjava.vscode-java-pack",
-        "ms-vscode.cpptools-extension-pack",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
         "dotjoshjohnson.xml",
-        "austin.code-gnu-global",
         "eg2.vscode-npm-script",
         "christian-kohler.npm-intellisense",
-        "ms-azuretools.vscode-azureterraform",
-        "ms-python.python",
         "ms-edgedevtools.vscode-edge-devtools"
     ]
 }
